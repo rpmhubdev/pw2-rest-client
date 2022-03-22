@@ -1,0 +1,35 @@
+name: Build
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Set up JDK 17
+        uses: actions/setup-java@v1
+          with:
+            java-version: 17
+    - name: Cache Maven packages
+      uses: actions/cache@v1
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+
+  serviceb:
+    name: Service B
+    steps:
+      - name: Run Service B
+        run: ./serviceb/mvnw quarkus:dev
+
+  servicea:
+    name: Service A
+    steps:
+      - name: Run Service A
+        run: ./servicea/mvnw quarkus:dev
