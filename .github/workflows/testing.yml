@@ -24,6 +24,8 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
       - name: Run Service B
-        run: cd serviceb | ./mvnw quarkus:dev
+        working-directory: ./serviceb
+        run: ./mvnw quarkus:dev
       - name: Testing Service A
-        run: cd servicea | ./mvnw test
+        working-directory: ./servicea
+        run: ./mvnw test
