@@ -11,16 +11,18 @@ Exercício sobre Rest Client.
   * Finalmente, verifique na aba `Actions` do seu repositório no Github se os testes passaram (correção automática)
 
 🚨 Se você não souber como realizar operações como *fork*, *clone* e *push* no Github, por favor, assistam o [vídeo](https://www.youtube.com/watch?v=SDowGAvT0l0) com dicas de Git/Github.
-## Issues
 
-Existem três [issues](https://github.com/rpmhub/pw2-rest-client/issues) (tarefas) abertas no Github que devem ser implementadas. 
+## Tarefas
+
+Existem três [issues](https://github.com/rpmhub/pw2-rest-client/issues) (questões/tarefas) abertas no Github que devem ser implementadas. 
 Estas [issues](https://github.com/rpmhub/pw2-rest-client/issues) detalham o que deve ser desenvolvidos no sistema a fim de permitir 
-que os testes automáticos (correção) possam ser realizadas com sucesso. 
+que os testes automáticos (correção) possam ser realizado com sucesso. 
 
-Assim, verifique as [issues](https://github.com/rpmhub/pw2-rest-client/issues)para você ter uma melhor compreensão do que deve 
+Assim, verifique cada [issues](https://github.com/rpmhub/pw2-rest-client/issues) para ter uma melhor compreensão do que deve 
 ser desenvolvido nesse projeto.
 
-## Dicas 💡
+## Dicas gerais sobre o projeto 💡
 
-Se você desejar verificar se o seu projeto está correto, ou seja, os testes estão passando, primeiro execute o projeto `serviceb` e depois rode o projeto
-`servicea` (`./mvnw quarkus:dev`). Depois que o serviço `servicea` estiver rodando, pressione a tecla `r` para executar os testes que esse projeto possui.
+Se você desejar verificar se o seu projeto está correto, ou seja, os testes estão passando, execute o projeto `servicea` e pressione a tecla `r` do terminal para executar os testes que esse projeto possui. Assim, é possível testar a sua implementação do Rest Client sem a necessitade de rodar `serviceb`, pois, `servicea` possui um _Mock_ que simula `serviceb`.
+
+Alternativamente, você também pode rodar os dois serviços ao mesmo tempo `servicea` e `serviceb` para verificar a sua solução. Nesse caso, observe que o `servicea` foi configurado para rodar na porta 3333 e o `serviceb` 4444.
