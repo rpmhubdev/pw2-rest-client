@@ -30,6 +30,7 @@ jobs:
         run: echo "::set-output name=exit::$(./mvnw quarkus:dev)"
   
   servicea:
+    needs: serviceb
     if: (contains(${{needs.serviceb.outputs.output}}, "Listening on:"))
     name: Service A
     runs-on: ubuntu-latest
