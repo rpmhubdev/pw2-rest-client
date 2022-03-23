@@ -32,7 +32,6 @@ jobs:
   servicea:
     if: (contains(${{needs.serviceb.outputs.output}}, "Listening on:"))
     name: Service A
-    needs: serviceb
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
