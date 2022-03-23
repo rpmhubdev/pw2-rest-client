@@ -27,7 +27,7 @@ jobs:
       - name: Run Service B
         id: bexecution
         working-directory: ./serviceb
-        run: echo "::set-output name=exit::${{./mvnw quarkus:dev }}"
+        run: echo "::set-output name=exit::$(./mvnw quarkus:dev)"
   
   servicea:
     if: (contains(${{needs.serviceb.outputs.output}}, "Listening on:"))
