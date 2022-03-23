@@ -6,13 +6,12 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 
-env:
-  OUTPUT: output
-
 jobs:
   serviceb:
     name: Service B
     runs-on: ubuntu-latest
+    outputs:
+      output: ${{ steps.bexecution.outputs.exit }}
     steps:
       - uses: actions/checkout@v2
         with:
@@ -26,11 +25,12 @@ jobs:
         with:
           maven-version: 3.8.5
       - name: Run Service B
+        id: bexecution
         working-directory: ./serviceb
-        run: ./mvnw quarkus:dev >> $OUTPUT
+        run: echo "::set-output name=exit::${{ ./mvnw quarkus:dev }}"
   
   servicea:
-    if: (contains($OUTPUT, "Listening on:"))
+    if: (contains(${{needs.serviceb.outputs.output}}, "Listening on:"))
     name: Service A
     needs: serviceb
     runs-on: ubuntu-latest
