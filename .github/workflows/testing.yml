@@ -30,8 +30,8 @@ jobs:
         run: ./mvnw quarkus:dev >> $OUTPUT
   
   servicea:
+    if: (contains($OUTPUT, "Listening on:"))
     name: Service A
-    if: (contains($OUTPUT, "Listening on: http://localhost:8081"))
     needs: serviceb
     runs-on: ubuntu-latest
     steps:
