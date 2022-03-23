@@ -5,6 +5,10 @@ on:
       - main
   pull_request:
     types: [opened, synchronize, reopened]
+
+env:
+  OUTPUT: output
+
 jobs:
   serviceb:
     name: Service B
@@ -23,10 +27,11 @@ jobs:
           maven-version: 3.8.5
       - name: Run Service B
         working-directory: ./serviceb
-        run: ./mvnw quarkus:dev
+        run: ./mvnw quarkus:dev >> $OUTPUT
   
   servicea:
     name: Service A
+    if: (contains($OUTPUT, "Listening on: http://localhost:8081"))
     needs: serviceb
     runs-on: ubuntu-latest
     steps:
