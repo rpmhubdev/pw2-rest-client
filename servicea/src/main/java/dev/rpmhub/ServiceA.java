@@ -31,7 +31,7 @@ public class ServiceA {
     // instancie o Rest Cliente para o serviço B
     @Inject
     @RestClient
-    MyRemoteService service;
+    ServiceB service;
     
     @GET
     @Path("/person/{name}")
