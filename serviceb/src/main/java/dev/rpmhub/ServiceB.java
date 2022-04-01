@@ -38,5 +38,4 @@ public class ServiceB {
         person.setName(name);
         return person;
     }
-
 }
