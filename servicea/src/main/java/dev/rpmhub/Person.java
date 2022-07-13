@@ -19,6 +19,9 @@ public class Person {
 
     private String name;
 
+    public Person(String string) {
+    }
+
     public String getName() {
         return name;
     }
