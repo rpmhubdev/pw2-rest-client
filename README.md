@@ -2,27 +2,41 @@
 
 Exercício sobre Rest Client.
 
-## Passos para a realização do exercício
+## Exercício
 
-  * Primeiro, faça um [*fork*](https://docs.github.com/pt/get-started/quickstart/fork-a-repo) do projeto para a sua conta no Github
-  * Depois, realize um [clone](https://docs.github.com/pt/repositories/creating-and-managing-repositories/cloning-a-repository) para a sua máquina local
-  * Logo, implemente as [issues](https://github.com/rpmhub/pw2-rest-client/issues) que foram estipuladas para esse projeto
-  * Em seguida, realize um [push](https://docs.github.com/pt/desktop/contributing-and-collaborating-using-github-desktop/making-changes-in-a-branch/pushing-changes-to-github) da sua solução
-  * Finalmente, verifique na aba `Actions` do seu repositório no Github se os testes passaram (correção automática)
+Existem três [issues/tarefas](https://github.com/rpmhubdev/pw2-rest-client/issues)
+abertas no Github do repositório original que devem ser implementadas.
+Estas [issues](https://github.com/rpmhubdev/pw2-rest-client/issues) detalham o
+que deve ser desenvolvidos no exercício a fim de permitir que os testes
+automáticos (correção automática) possam passar com sucesso.
 
-🚨 Se você não souber como realizar operações como *fork*, *clone* e *push* no Github, por favor, assistam o [vídeo](https://www.youtube.com/watch?v=SDowGAvT0l0) com dicas de Git/Github.
+## Como executar os testes? 💡
 
-## Tarefas
+Se você desejar verificar se o seu projeto está correto, ou seja, os testes
+estão passando, execute o projeto `servicea` e depois pressione a tecla `r` do
+terminal para executar os testes que esse projeto possui.
+Assim, é possível testar a sua implementação do Rest Client sem
+a necessidade de rodar `serviceb`, pois, `servicea` possui um _Mock_ que
+simula `serviceb`.
 
-Existem três [issues](https://github.com/rpmhub/pw2-rest-client/issues) (questões/tarefas) abertas no Github que devem ser implementadas. 
-Estas [issues](https://github.com/rpmhub/pw2-rest-client/issues) detalham o que deve ser desenvolvidos no sistema a fim de permitir 
-que os testes automáticos (correção) possam ser realizado com sucesso. 
+Alternativamente, você também pode rodar os dois serviços ao mesmo tempo
+`servicea` e `serviceb` para verificar a sua solução. Neste caso, observe que
+o `servicea` foi configurado para rodar na porta 3333 e o `serviceb` 4444.
 
-Assim, verifique cada [issues](https://github.com/rpmhub/pw2-rest-client/issues) para ter uma melhor compreensão do que deve 
-ser desenvolvido nesse projeto.
+## Como entregar o exercício?
 
-## Dicas gerais sobre o projeto 💡
+Uma vez que os testes estejam passando, faça um
+[commit](https://code.visualstudio.com/docs/sourcecontrol/overview#_commit) e
+um [push](https://code.visualstudio.com/docs/sourcecontrol/overview#_remotes)
+para confirmar a atualização do seu código. 🚨 Uma dica, você pode encontrar
+esses comandos no menu de commandos do Visual Studio Code (Ctrl+Shift+P).
 
-Se você desejar verificar se o seu projeto está correto, ou seja, os testes estão passando, execute o projeto `servicea` e pressione a tecla `r` do terminal para executar os testes que esse projeto possui. Assim, é possível testar a sua implementação do Rest Client sem a necessitade de rodar `serviceb`, pois, `servicea` possui um _Mock_ que simula `serviceb`.
+Após a realização do *commit* e o *push*, você poderá ir no repositório do seu
+exercício e observar a aba *Pull Requests* para ver se os testes estão passando
+também no seu repositório do exercício. O professor irá avaliar o seu código e
+aceitar o *Pull Request* caso esteja correto.
 
-Alternativamente, você também pode rodar os dois serviços ao mesmo tempo `servicea` e `serviceb` para verificar a sua solução. Nesse caso, observe que o `servicea` foi configurado para rodar na porta 3333 e o `serviceb` 4444.
+🚨 Se você não souber como realizar operações como *fork*, *clone*, *commit* e
+*push* no Github, por favor, assistam o
+[vídeo](https://www.youtube.com/watch?v=SDowGAvT0l0) com dicas de Git/Github
+com o vscode.
